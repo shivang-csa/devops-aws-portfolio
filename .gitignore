@@ -1,0 +1,14 @@
+# Terraform local state
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+
+# Terraform variables (where secrets live)
+*.tfvars
+*.tfvars.json
+
+# Local environment files
+.env
