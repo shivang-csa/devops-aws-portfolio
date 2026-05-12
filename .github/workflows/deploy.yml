@@ -20,12 +20,4 @@ jobs:
           aws-region: us-east-1
 
       - name: Upload to S3
-        # Replace 'my-portfolio-site-unique-2026' with YOUR actual bucket name
         run: aws s3 sync ./website-content s3://my-portfolio-site-unique-2026 --delete
-
-      - name: CloudFront Invalidation
-        # This clears the CDN cache so changes show up instantly
-        run: |
-          aws cloudfront create-invalidation \
-            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
-            --paths "/*"
